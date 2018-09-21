@@ -1231,6 +1231,8 @@ body {
 		
 /* MEDIA CELL DESC */
 .media-cell-desc {
+	width: 300px;
+	
     position: relative; padding: 28px 40px; background: #fff;
 	}
 
