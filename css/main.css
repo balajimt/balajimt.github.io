@@ -661,7 +661,7 @@ body {
 	position: static;
 	}
 .home-section .content > div {
-	font-size: 140%; text-align: center; position: absolute; bottom: 0; width: 100%; max-width: 100%; z-index: 100;
+	font-size: 140%; text-align: center; position: absolute; bottom: 20%; width: 100%; max-width: 100%; z-index: 100;
 	}
 .home-section .content > div > * {
 	max-width: 940px; margin-left: auto; margin-right: auto;
