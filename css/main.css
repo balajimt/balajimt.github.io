@@ -2504,3 +2504,8 @@ a.more-link:hover,
 #nprogress .spinner-icon {
   	border-top-color: #FFFC00; border-left-color: #FFFC00;
 	}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
