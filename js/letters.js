@@ -123,7 +123,7 @@ class NumberElementCollector {
   generateNumberElement() {
     return new NumberElement(
     new NumberElementConfig(
-    ['ழ', '0'],
+    ['ழ', 'zha'],
     [0, innerWidth], // x
     [0, innerHeight], // y
     [15, 50], // size
