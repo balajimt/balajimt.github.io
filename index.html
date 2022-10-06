@@ -50,6 +50,7 @@
   <script src="js/jquery-1.12.1.min.js"></script>
   <script src="js/jquery-migrate-1.2.1.min.js"></script>
   <script src="js/modernizr.min.js"></script>
+  			
 
 </head>
 
@@ -140,7 +141,7 @@
             <h4>Hello World, I am </h4>
             <h3>Balaji Muthazhagan</h3>
 			<label><br>Computer Science Graduate Student @ UCSD (2022)<br>La Jolla, CA</label><br>
-			<label style="color:#2BA163;">Incoming Software Engineer at Pinterest 📌</label>
+			<label style="color:#2BA163;">UPDATE: <a href="https://pinterest.com">I'll be returning to Pinterest 📌 <br>as a Software Engineer starting Feb 2023</a></label>
 			
 <!-- partial -->
 
@@ -178,12 +179,14 @@
             <!-- row -->
             <div class="blockquote" align="justify">
 			
-			I'm a hacker at heart, currently moonlighting as a Masters student in <a href="https://cse.ucsd.edu/">Computer Science at UC San Diego</a>. Before joining UCSD, I spent four wonderful years at <a href="https://www.psgtech.edu/">PSG College of Technology</a> (<a href="https://www.annauniv.edu/">Anna University</a>), where I finished my undergraduate with a Gold Medal in Computer Science & Engineering. This was followed by 2+ years of Software Engineering experience in building and architecting complex, distributed, and data-heavy systems.		
+			I'm a hacker at heart, currently moonlighting as a Masters student in <a href="https://cse.ucsd.edu/">Computer Science at UC San Diego</a>. Before joining UCSD, I spent four wonderful years at <a href="https://www.psgtech.edu/">PSG College of Technology</a> (<a href="https://www.annauniv.edu/">Anna University</a>), where I finished my undergraduate with a Gold Medal in Computer Science & Engineering. This was followed by 2+ years of Software Engineering experience in building and architecting complex, distributed, and data-heavy systems.
+
+
 			
 			 <br><br>
-			 <b>2021 - present day</b><br><br>
+			 <b>2021 - <span id="todayDate">present day</span></b><br><br>
 			  
-			  This summer, I was a Software Engineering Intern at <a href="https://www.pinterest.com/">Pinterest</a>, where I developed a graph validation engine for ads serving (3 Billion $ business). <br> <br>
+			  This summer, I was a Software Engineering Intern at <a href="https://www.pinterest.com/">Pinterest</a>, where I developed a graph validation engine for ads serving (3 Billion $ business). I'll be returning to <a href="https://www.pinterest.com/">Pinterest</a> as a Software Engineer starting Feb 2023.<br> <br>
 			  
 			  From the Winter of 2021, I have been engaging as a Graduate Student Researcher in the Bazhenov Lab @ UCSD. My research pertains to continual learning and loss surfaces of neural networks. I developed sleep-based continual learning algorithms and integrated them with <a href ="https://avalanche.continualai.org/">ContinualAi's avalanche</a>. Avalanche recently became a part of the <a href="https://pytorch.org/ecosystem/">PyTorch ecosystem.</a> <br><br>
               
@@ -402,6 +405,16 @@ You can have a detailed look at my professional and academic work <a href="#/res
   <div class="p-overlay"></div>
   <div class="p-overlay"></div>
   <div class="site-alert animated"></div>
+  
+  <script>
+	function replaceMonth() {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
+		var date = new Date();
+
+		document.getElementById('todayDate').innerHTML = months[date.getMonth()] + ' ' + date.getFullYear();
+	};
+	replaceMonth();
+	</script>
 
   <script src="js/jquery.address-1.5.min.js"></script>
   <script src="js/nprogress/nprogress.js"></script>
