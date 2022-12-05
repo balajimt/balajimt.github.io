@@ -125,8 +125,8 @@ h1.white, h2.white, h3.white, h4.white, h5.white, h6.white {
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -70px;
-  margin-top: -130px; }
+  margin-left: -50px;
+  margin-top: -110px; }
 
 .box.active ~ .logo {
   z-index: 100; }
@@ -137,9 +137,10 @@ h1.white, h2.white, h3.white, h4.white, h5.white, h6.white {
   margin: 0; }
 
 .logo .logo-image {
+  border-radius: 100px;
   background: #00e1b6;
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   display: block;
   -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -256,7 +257,7 @@ h2.bottom img {
 
 h2.top img {
   position: absolute;
-  top: 0; }
+  bottom: 0; }
 
 /* section-title */
 .section-title {
