@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparna & Balaji | Thala Diwali RSVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rockwell:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rockwell', sans-serif;
+        }
+
+        body {
+            background-color: #A42028;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .invitation-image {
+            width: 80%;
+            height: auto;
+            display: block;
+        }
+
+        .form-section {
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            color: #A42028;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333333;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #FAFAFA;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #A42028;
+            background-color: #FFFFFF;
+        }
+
+        input:hover {
+            border-color: #A42028;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #A42028;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: #8B1432;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 400;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #E8F5E9;
+            color: #1B5E20;
+            border: 1px solid #A5D6A7;
+        }
+
+        .error-message {
+            background-color: #FFEBEE;
+            color: #B71C1C;
+            border: 1px solid #FFCDD2;
+        }
+
+        @media (max-width: 600px) {
+            .form-section {
+                padding: 20px 16px;
+            }
+
+            .form-container {
+                padding: 24px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .loading {
+            position: relative;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 2px solid #FFF;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="images/THALADIWALI.svg" alt="Diwali Party Invitation" class="invitation-image">
+    
+    <div class="form-section">
+        <div class="form-container">
+            <h2>RSVP</h2>
+            <form action="https://formspree.io/f/mldeglvw" method="POST">
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="ENTER YOUR NAME"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">ENTER EMAIL</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="EMAIL"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">NUMBER OF GUESTS</label>
+                    <input 
+                        type="number" 
+                        id="guests" 
+                        name="guests" 
+                        min="1" 
+                        max="10" 
+                        required 
+                        placeholder="ENTER NUMBER OF GUESTS"
+                    >
+                </div>
+
+                <button type="submit">Submit RSVP</button>
+            </form>
+            <div id="successMessage" class="message success-message">
+                Thank you for your RSVP. We look forward to celebrating with you!
+            </div>
+            <div id="errorMessage" class="message error-message">
+                There was an error submitting your RSVP. Please try again.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const button = form.querySelector('button');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(e) {
+            button.classList.add('loading');
+            
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            setTimeout(() => {
+                button.classList.remove('loading');
+                successMessage.style.display = 'block';
+                form.reset();
+
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
